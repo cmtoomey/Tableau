@@ -1020,15 +1020,53 @@
       </datasource-dependencies>
     </datasource>
   </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
   <worksheets>
     <worksheet name='Sheet 1'>
       <table>
         <view>
           <datasources>
+            <datasource name='Sample - Superstore Subset (Excel)' />
           </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Sample - Superstore Subset (Excel)'>
+            <column datatype='integer' name='[Postal Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal'>
+            </column>
+            <column-instance column='[Postal Code]' derivation='None' name='[none:Postal Code:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
           <aggregation value='true' />
         </view>
         <style>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
         </style>
         <panes>
           <pane>
@@ -1036,10 +1074,13 @@
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <encodings>
+              <lod column='[Sample - Superstore Subset (Excel)].[none:Postal Code:ok]' />
+            </encodings>
           </pane>
         </panes>
-        <rows></rows>
-        <cols></cols>
+        <rows>[Sample - Superstore Subset (Excel)].[Latitude (generated)]</rows>
+        <cols>[Sample - Superstore Subset (Excel)].[Longitude (generated)]</cols>
       </table>
     </worksheet>
   </worksheets>
@@ -1066,28 +1107,7 @@
     </window>
   </windows>
   <thumbnails>
-    <thumbnail height='288' name='Sheet 1' width='348'>
-      iVBORw0KGgoAAAANSUhEUgAAAVwAAAEgCAYAAAD49suWAAAACXBIWXMAAA7DAAAOwwHHb6hk
-      AAAD60lEQVR4nO3UMQHAIBDAwFL/nh8VhIE7BZmyZmY+AI77bwcAvMJwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAkQ3yPAY8hWYIbwAAAABJRU5ErkJg
-      gg==
+    <thumbnail height='384' name='Sheet 1' width='384'>
     </thumbnail>
   </thumbnails>
 </workbook>
