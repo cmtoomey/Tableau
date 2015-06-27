@@ -1119,7 +1119,7 @@
         <cols>[Sample - Superstore Subset (Excel)].[ctd:Order ID:qk]</cols>
       </table>
     </worksheet>
-    <worksheet name="Map">
+    <worksheet name="Map1">
       <table>
         <view>
           <datasources>
@@ -1203,8 +1203,6 @@
           </strip>
         </edge>
       </cards>
-      <viewpoint>
-      </viewpoint>
     </window>
     <window auto-hidden="0" class="worksheet" maximized="0" name="Customers">
       <cards>
@@ -1230,7 +1228,7 @@
         </color-one-way>
       </highlight>
     </window>
-    <window auto-hidden="0" class="worksheet" maximized="1" name="Map">
+    <window auto-hidden="0" class="worksheet" maximized="1" name="Map1">
       <cards>
         <edge name="left">
           <strip size="160">
