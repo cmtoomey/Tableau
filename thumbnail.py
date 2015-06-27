@@ -1,8 +1,10 @@
 import xml.etree.ElementTree as ET
+import subprocess
 import os
 import glob
 wd = os.getcwd()
 pattern = '*.twb'
+subprocess.call(["git","reset"])
 for name in glob.glob(wd+"/"+pattern):
     tree = ET.parse(name)
     root = tree.getroot()
@@ -12,3 +14,4 @@ for name in glob.glob(wd+"/"+pattern):
         for thumbnail in thumbnail:
             thumbnails.remove(thumbnail)
     tree.write(name)
+subprocess.call(["git","add","."])
