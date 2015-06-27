@@ -15,4 +15,5 @@ for name in glob.glob(wd+"/"+pattern):
         for thumbnail in thumbnail:
             thumbnails.remove(thumbnail)
     tree.write(name)
+    break
 subprocess.call(["git","add","."])
