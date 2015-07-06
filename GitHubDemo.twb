@@ -1,5 +1,5 @@
 <workbook source-platform="mac" version="9.0">
-
+  
   <preferences>
     <preference name="ui.encoding.shelf.height" value="24" />
     <preference name="ui.shelf.height" value="26" />
@@ -1022,74 +1022,6 @@
     <mapsource name="Tableau" />
   </mapsources>
   <worksheets>
-    <worksheet name="Bars">
-      <table>
-        <view>
-          <datasources>
-            <datasource name="Sample - Superstore Subset (Excel)" />
-          </datasources>
-          <datasource-dependencies datasource="Sample - Superstore Subset (Excel)">
-            <column caption="Gross Profit Ratio" datatype="real" default-format="p0.0%" name="[Calculation_9100813121824802]" role="measure" type="quantitative">
-              <calculation class="tableau" formula="SUM([Profit])/AVG([Sales])" />
-            </column>
-            <column datatype="string" name="[Customer Segment]" role="dimension" type="nominal">
-            </column>
-            <column datatype="real" default-format="c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)" name="[Profit]" role="measure" type="quantitative">
-            </column>
-            <column-instance column="[Customer Segment]" derivation="None" name="[none:Customer Segment:nk]" pivot="key" type="nominal" />
-            <column-instance column="[Profit]" derivation="Sum" name="[sum:Profit:qk]" pivot="key" type="quantitative" />
-            <column-instance column="[Calculation_9100813121824802]" derivation="User" name="[usr:Calculation_9100813121824802:qk]" pivot="key" type="quantitative" />
-          </datasource-dependencies>
-          <aggregation value="true" />
-        </view>
-        <style>
-          <style-rule element="map-layer">
-            <format attr="enabled" id="tab_base" value="true" />
-            <format attr="enabled" id="um_lcover" value="true" />
-            <format attr="enabled" id="tab_coastline" value="false" />
-            <format attr="enabled" id="pp2_line" value="false" />
-            <format attr="enabled" id="light_adm0_bnd" value="false" />
-            <format attr="enabled" id="light_adm0_lbl" value="false" />
-            <format attr="enabled" id="um_adm0_bnd" value="true" />
-            <format attr="enabled" id="um_adm0_lbl" value="true" />
-            <format attr="enabled" id="light_pp2_statebounds" value="false" />
-            <format attr="enabled" id="light_pp2_statelabels" value="false" />
-            <format attr="enabled" id="pp2_adminlabels" value="false" />
-            <format attr="enabled" id="pp2_statebounds" value="true" />
-            <format attr="enabled" id="pp2_statelabels" value="true" />
-            <format attr="enabled" id="countybounds" value="false" />
-            <format attr="enabled" id="countylabels" value="false" />
-            <format attr="enabled" id="zipbounds" value="false" />
-            <format attr="enabled" id="ziplabels" value="false" />
-            <format attr="enabled" id="tab_areabounds" value="false" />
-            <format attr="enabled" id="tab_arealabels" value="false" />
-            <format attr="enabled" id="tab_msabounds" value="false" />
-            <format attr="enabled" id="tab_msalabels" value="false" />
-          </style-rule>
-          <style-rule element="map">
-            <format attr="washout" value="0.0" />
-          </style-rule>
-        </style>
-        <panes>
-          <pane>
-            <view>
-              <breakdown value="auto" />
-            </view>
-            <mark class="Automatic" />
-            <encodings>
-              <color column="[Sample - Superstore Subset (Excel)].[sum:Profit:qk]" />
-            </encodings>
-            <style>
-              <style-rule element="mark">
-                <format attr="mark-labels-show" value="false" />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[Sample - Superstore Subset (Excel)].[none:Customer Segment:nk]</rows>
-        <cols>[Sample - Superstore Subset (Excel)].[usr:Calculation_9100813121824802:qk]</cols>
-      </table>
-    </worksheet>
     <worksheet name="Customers">
       <table>
         <view>
@@ -1183,10 +1115,78 @@
         <cols>[Sample - Superstore Subset (Excel)].[Longitude (generated)]</cols>
       </table>
     </worksheet>
+    <worksheet name="ProfitBars">
+      <table>
+        <view>
+          <datasources>
+            <datasource name="Sample - Superstore Subset (Excel)" />
+          </datasources>
+          <datasource-dependencies datasource="Sample - Superstore Subset (Excel)">
+            <column caption="Gross Profit Ratio" datatype="real" default-format="p0.0%" name="[Calculation_9100813121824802]" role="measure" type="quantitative">
+              <calculation class="tableau" formula="SUM([Profit])/AVG([Sales])" />
+            </column>
+            <column datatype="string" name="[Customer Segment]" role="dimension" type="nominal">
+            </column>
+            <column datatype="real" default-format="c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)" name="[Profit]" role="measure" type="quantitative">
+            </column>
+            <column-instance column="[Customer Segment]" derivation="None" name="[none:Customer Segment:nk]" pivot="key" type="nominal" />
+            <column-instance column="[Profit]" derivation="Sum" name="[sum:Profit:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[Calculation_9100813121824802]" derivation="User" name="[usr:Calculation_9100813121824802:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="map-layer">
+            <format attr="enabled" id="tab_base" value="true" />
+            <format attr="enabled" id="um_lcover" value="true" />
+            <format attr="enabled" id="tab_coastline" value="false" />
+            <format attr="enabled" id="pp2_line" value="false" />
+            <format attr="enabled" id="light_adm0_bnd" value="false" />
+            <format attr="enabled" id="light_adm0_lbl" value="false" />
+            <format attr="enabled" id="um_adm0_bnd" value="true" />
+            <format attr="enabled" id="um_adm0_lbl" value="true" />
+            <format attr="enabled" id="light_pp2_statebounds" value="false" />
+            <format attr="enabled" id="light_pp2_statelabels" value="false" />
+            <format attr="enabled" id="pp2_adminlabels" value="false" />
+            <format attr="enabled" id="pp2_statebounds" value="true" />
+            <format attr="enabled" id="pp2_statelabels" value="true" />
+            <format attr="enabled" id="countybounds" value="false" />
+            <format attr="enabled" id="countylabels" value="false" />
+            <format attr="enabled" id="zipbounds" value="false" />
+            <format attr="enabled" id="ziplabels" value="false" />
+            <format attr="enabled" id="tab_areabounds" value="false" />
+            <format attr="enabled" id="tab_arealabels" value="false" />
+            <format attr="enabled" id="tab_msabounds" value="false" />
+            <format attr="enabled" id="tab_msalabels" value="false" />
+          </style-rule>
+          <style-rule element="map">
+            <format attr="washout" value="0.0" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Automatic" />
+            <encodings>
+              <color column="[Sample - Superstore Subset (Excel)].[sum:Profit:qk]" />
+            </encodings>
+            <style>
+              <style-rule element="mark">
+                <format attr="mark-labels-show" value="false" />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[Sample - Superstore Subset (Excel)].[none:Customer Segment:nk]</rows>
+        <cols>[Sample - Superstore Subset (Excel)].[usr:Calculation_9100813121824802:qk]</cols>
+      </table>
+    </worksheet>
   </worksheets>
   <windows>
     <window class="schema" source-height="-1" />
-    <window auto-hidden="0" class="worksheet" maximized="1" name="Bars">
+    <window auto-hidden="0" class="worksheet" maximized="1" name="ProfitBars">
       <cards>
         <edge name="left">
           <strip size="160">
