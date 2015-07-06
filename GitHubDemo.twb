@@ -417,7 +417,7 @@
       </connection>
       <aliases enabled="yes" />
       <column caption="Gross Profit Ratio" datatype="real" default-format="p0.0%" name="[Calculation_9100813121824802]" role="measure" type="quantitative">
-        <calculation class="tableau" formula="SUM([Profit])/SUM([Sales])" />
+        <calculation class="tableau" formula="SUM([Profit])/AVG([Sales])" />
       </column>
       <column datatype="string" name="[City]" role="dimension" semantic-role="[City].[Name]" type="nominal">
       </column>
@@ -1029,15 +1029,16 @@
             <datasource name="Sample - Superstore Subset (Excel)" />
           </datasources>
           <datasource-dependencies datasource="Sample - Superstore Subset (Excel)">
+            <column caption="Gross Profit Ratio" datatype="real" default-format="p0.0%" name="[Calculation_9100813121824802]" role="measure" type="quantitative">
+              <calculation class="tableau" formula="SUM([Profit])/AVG([Sales])" />
+            </column>
             <column datatype="string" name="[Customer Segment]" role="dimension" type="nominal">
             </column>
             <column datatype="real" default-format="c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)" name="[Profit]" role="measure" type="quantitative">
             </column>
-            <column datatype="real" default-format="c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)" name="[Sales]" role="measure" type="quantitative">
-            </column>
             <column-instance column="[Customer Segment]" derivation="None" name="[none:Customer Segment:nk]" pivot="key" type="nominal" />
             <column-instance column="[Profit]" derivation="Sum" name="[sum:Profit:qk]" pivot="key" type="quantitative" />
-            <column-instance column="[Sales]" derivation="Sum" name="[sum:Sales:qk]" pivot="key" type="quantitative" />
+            <column-instance column="[Calculation_9100813121824802]" derivation="User" name="[usr:Calculation_9100813121824802:qk]" pivot="key" type="quantitative" />
           </datasource-dependencies>
           <aggregation value="true" />
         </view>
@@ -1086,7 +1087,7 @@
           </pane>
         </panes>
         <rows>[Sample - Superstore Subset (Excel)].[none:Customer Segment:nk]</rows>
-        <cols>[Sample - Superstore Subset (Excel)].[sum:Sales:qk]</cols>
+        <cols>[Sample - Superstore Subset (Excel)].[usr:Calculation_9100813121824802:qk]</cols>
       </table>
     </worksheet>
     <worksheet name="Customers">
@@ -1185,7 +1186,7 @@
   </worksheets>
   <windows>
     <window class="schema" source-height="-1" />
-    <window auto-hidden="0" class="worksheet" maximized="0" name="Bars">
+    <window auto-hidden="0" class="worksheet" maximized="1" name="Bars">
       <cards>
         <edge name="left">
           <strip size="160">
@@ -1227,8 +1228,10 @@
           <field>[Sample - Superstore Subset (Excel)].[none:Order ID:ok]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
-    <window auto-hidden="0" class="worksheet" maximized="1" name="Map1">
+    <window auto-hidden="0" class="worksheet" maximized="0" name="Map1">
       <cards>
         <edge name="left">
           <strip size="160">
@@ -1252,6 +1255,8 @@
           <field>[Sample - Superstore Subset (Excel)].[none:Order ID:ok]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
   </windows>
   <thumbnails>
