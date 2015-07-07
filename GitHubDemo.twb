@@ -1115,7 +1115,7 @@
         <cols>[Sample - Superstore Subset (Excel)].[Longitude (generated)]</cols>
       </table>
     </worksheet>
-    <worksheet name="ProfitBars">
+    <worksheet name="ProfitBars1">
       <table>
         <view>
           <datasources>
@@ -1189,7 +1189,7 @@
   </worksheets>
   <windows>
     <window class="schema" source-height="-1" />
-    <window auto-hidden="0" class="worksheet" maximized="1" name="ProfitBars">
+    <window auto-hidden="0" class="worksheet" maximized="1" name="ProfitBars1">
       <cards>
         <edge name="left">
           <strip size="160">
