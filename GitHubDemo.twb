@@ -1022,7 +1022,7 @@
     <mapsource name="Tableau" />
   </mapsources>
   <worksheets>
-    <worksheet name="Customers1">
+    <worksheet name="Customers">
       <table>
         <view>
           <datasources>
@@ -1208,7 +1208,7 @@
         </edge>
       </cards>
     </window>
-    <window auto-hidden="0" class="worksheet" maximized="0" name="Customers1">
+    <window auto-hidden="0" class="worksheet" maximized="0" name="Customers">
       <cards>
         <edge name="left">
           <strip size="160">
