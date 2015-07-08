@@ -1,5 +1,5 @@
 <workbook source-platform="mac" version="9.0">
-  
+
   <preferences>
     <preference name="ui.encoding.shelf.height" value="24" />
     <preference name="ui.shelf.height" value="26" />
@@ -1022,7 +1022,7 @@
     <mapsource name="Tableau" />
   </mapsources>
   <worksheets>
-    <worksheet name="Customers">
+    <worksheet name="Customers2">
       <table>
         <view>
           <datasources>
@@ -1208,7 +1208,7 @@
         </edge>
       </cards>
     </window>
-    <window auto-hidden="0" class="worksheet" maximized="0" name="Customers">
+    <window auto-hidden="0" class="worksheet" maximized="0" name="Customers2">
       <cards>
         <edge name="left">
           <strip size="160">
