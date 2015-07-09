@@ -1271,7 +1271,7 @@
   </worksheets>
   <windows>
     <window class='schema' source-height='-1' />
-    <window auto-hidden='0' class='worksheet' maximized='1' name='ProfitBars'>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='ProfitBars'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1289,8 +1289,6 @@
           </strip>
         </edge>
       </cards>
-      <viewpoint>
-      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='0' name='Customers'>
       <cards>
@@ -1369,6 +1367,8 @@
           <field>[Sample - Superstore Subset (Excel)].[none:Product Container:nk]</field>
         </color-one-way>
       </highlight>
+      <viewpoint>
+      </viewpoint>
     </window>
     <window auto-hidden='0' class='worksheet' maximized='1' name='Shipping'>
       <cards>
